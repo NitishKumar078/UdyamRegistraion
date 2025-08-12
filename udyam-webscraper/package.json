@@ -1,0 +1,15 @@
+{
+  "name": "udyam-webscraper",
+  "version": "1.0.0",
+  "description": "This is script it used for scrappting the data from the udyam Registration form page in Json formate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nitish kumar",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "puppeteer": "^24.16.1"
+  }
+}
