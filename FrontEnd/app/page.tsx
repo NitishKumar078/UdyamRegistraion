@@ -1,103 +1,138 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* Breadcrumbs */}
+      <section className="bg-gray-100  p-4  flex justify-center ">
+        <h2 className="text-lg md:text-2xl font-light text-gray-800 items-center px-28">
+          UDYAM REGISTRATION FORM - For New Enterprise who are not Registered
+          yet as MSME
+        </h2>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Inner Page */}
+      <section className="py-4">
+        <div className="max-w-6xl mx-auto  px-28">
+          {/* Aadhaar Verification Card */}
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
+            <div className="bg-primary px-3 py-3">
+              <h2 className="text-white ">Aadhaar Verification With OTP</h2>
+            </div>
+
+            <div className="p-6 space-y-6">
+              {/* Aadhaar Number */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    htmlFor="aadhaarNo"
+                    className="block text-gray-700 font-medium mb-1"
+                  >
+                    1. Aadhaar Number / आधार संख्या
+                  </label>
+                  <input
+                    id="aadhaarNo"
+                    type="text"
+                    maxLength={12}
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-[#80bdff] focus:outline-none"
+                    placeholder="Your Aadhaar No"
+                  />
+                  <p className="text-red-600 text-sm hidden">Required</p>
+                </div>
+
+                {/* Entrepreneur Name */}
+                <div>
+                  <label
+                    htmlFor="ownerName"
+                    className="block text-gray-700 font-medium mb-1"
+                  >
+                    2. Name of Entrepreneur / उद्यमी का नाम
+                  </label>
+                  <input
+                    id="ownerName"
+                    type="text"
+                    maxLength={100}
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-[#80bdff] focus:outline-none"
+                    placeholder="Name as per Aadhaar"
+                  />
+                  <p className="text-red-600 text-sm hidden">Required</p>
+                </div>
+              </div>
+
+              {/* Info List */}
+              <ul className="list-disc pl-6 text-gray-700 space-y-2 text-[16px]">
+                <li>
+                  Aadhaar number shall be required for Udyam Registration.
+                </li>
+                <li>
+                  The Aadhaar number shall be of the proprietor in the case of a
+                  proprietorship firm, of the managing partner in the case of a
+                  partnership firm and of a karta in the case of a Hindu
+                  Undivided Family (HUF).
+                </li>
+                <li>
+                  In case of a Company or a Limited Liability Partnership or a
+                  Cooperative Society or a Society or a Trust, the organisation
+                  or its authorised signatory shall provide its GSTIN(As per
+                  applicablity of CGST Act 2017 and as notified by the ministry
+                  of MSME
+                  <span className="text-[#80bdff] hover:text-[#2956ba]">
+                    {" "}
+                    vide S.O. 1055(E) dated 05th March 2021
+                  </span>
+                  ) and PAN along with its Aadhaar number.
+                </li>
+              </ul>
+
+              {/* Consent Checkbox */}
+              <div className="flex items-start space-x-2">
+                <input
+                  id="declaration"
+                  type="checkbox"
+                  defaultChecked
+                  className="mt-1 w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                />
+                <label
+                  htmlFor="declaration"
+                  className="text-gray-700 text-[16px] leading-relaxed "
+                >
+                  I, the holder of the above Aadhaar, hereby give my consent to
+                  Ministry of MSME, Government of India, for using my Aadhaar
+                  number as alloted by UIDAI for Udyam Registration. NIC /
+                  Ministry of MSME, Government of India, have informed me that
+                  my aadhaar data will not be stored/shared. / मैं, आधार धारक,
+                  इस प्रकार उद्यम पंजीकरण के लिए यूआईडीएआई के साथ अपने आधार
+                  संख्या का उपयोग करने के लिए सू0ल0म0उ0 मंत्रालय, भारत सरकार को
+                  अपनी सहमति देता हूं। एनआईसी / सू0ल0म0उ0 मंत्रालय, भारत सरकार
+                  ने मुझे सूचित किया है कि मेरा आधार डेटा संग्रहीत / साझा नहीं
+                  किया जाएगा।
+                </label>
+              </div>
+
+              {/* Buttons */}
+              <div>
+                <button className="bg-primary hover:bg-[#0069d9] text-white font-medium px-5 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                  Validate & Generate OTP
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+      {/* Marquee (CSS-based) */}
+      <div className="mb-9 text-center">
+        <div className="marquee-container">
+          <div className="marquee-content">
+            <a
+              href="docs/OM_regarding_inclusion_of_Traders02072021.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary font-semibold "
+            >
+              Activities (NIC codes) not covered under MSMED Act, 2006 for Udyam
+              Registration
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
